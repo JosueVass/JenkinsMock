@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Esta es una prueba",
   "scripts": {
-    "api-test-production": "newman run --disable-unicode tests/pizzeriaV1.postman_collection.json --reporters cli,junit --reporter-junit-export newman.xml"
+    "api-test": "newman run --disable-unicode tests/pizzeriaV1.postman_collection.json --reporters cli,junit --reporter-junit-export newman.xml"
   },
   "author": "Josue Becerril",
   "dependencies": {
