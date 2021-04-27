@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "f035de50-491a-4355-a55b-a48446abd33d",
+		"name": "pizzeriaV1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener Ordenes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//Pruebas con Token dentro de la configuración.\r",
+							"//Check OK\r",
+							"pm.test('Health-check OK', function(){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"//Tiempo de respuesta menor de 400ms\r",
+							"pm.test(\"Tiempo de respuesta menor de 400ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});\r",
+							"\r",
+							"//Body tiene la cadena mensaje\r",
+							"pm.test(\"Body coincide con la cadena\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Size\");\r",
+							"});\r",
+							"\r",
+							"//Evalua que el token sea valido\r",
+							"pm.test('El token es valido para esta peticion', function(){\r",
+							"    const {data} = pm.response.json();\r",
+							"});\r",
+							"\r",
+							"//Login exitoso\r",
+							"pm.test(\"Login exitoso\", function () {\r",
+							"   pm.response.to.be.success; \r",
+							"});\r",
+							"\r",
+							"//Creacion del valor deberia ser exitoso\r",
+							"pm.test(\"La creacion del valor deberia ser exitoso\", function () {\r",
+							"   pm.response.to.be.success; \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://pizzeria-valentino.herokuapp.com/api/orders?Crust=THIN",
+					"protocol": "http",
+					"host": [
+						"pizzeria-valentino",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "Crust",
+							"value": "THIN"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Obtener Ordenes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pizzeria-valentino.herokuapp.com/api/orders?Crust=THIN",
+							"protocol": "http",
+							"host": [
+								"pizzeria-valentino",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "Crust",
+									"value": "THIN"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "166"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/0.16.0 Python/3.6.10"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Apr 2021 18:32:38 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"Crust\": \"THIN\",\n        \"Flavor\": \"SAUSAGE\",\n        \"Order_ID\": 1,\n        \"Size\": \"PERSONAL\",\n        \"Table_No\": 8,\n        \"Timestamp\": \"2021-04-27T16:47:21.036126\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Mock Obtener Ordenes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://38300eeb-092d-4049-a8c2-8d8519f0a55a.mock.pstmn.io/api/orders",
+					"protocol": "https",
+					"host": [
+						"38300eeb-092d-4049-a8c2-8d8519f0a55a",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
