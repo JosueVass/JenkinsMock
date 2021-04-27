@@ -1,0 +1,12 @@
+{
+  "name": "prueba",
+  "version": "1.0.0",
+  "description": "prueba mock",
+  "scripts": {
+		    "api-test": "newman run --disable-unicode tests/pizzeriaCT.postman_collection.json --reporters cli,junit --reporter-junit-export newman.xml"
+  },
+  "author": "Autor",
+  "dependencies": {
+    "newman": "^5.2.2"
+  }
+}
