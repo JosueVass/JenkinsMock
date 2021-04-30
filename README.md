@@ -3,8 +3,7 @@ Write your api tests in a smart way using postman mock server.
 
 Waht is Postman ?
 Postman is currently one of the most popular tools used in API testing.
-
-
+![image](https://user-images.githubusercontent.com/80009246/116633157-672c4680-a91e-11eb-8c5b-7a5822303e83.png)
 
 Waht is Newman ?
 Newman is a command-line collection runner for Postman, powered by node. It allows you to effortlessly run and test a Postman collection directly from the command-line. You can easily integrate it with your continuous integration servers and build systems.
